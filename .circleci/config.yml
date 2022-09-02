@@ -13,3 +13,8 @@ jobs:
       - android/accept-licenses
       - run: |
           ./gradlew :macrobenchmark:pixel2Api31BenchmarkAndroidTest -P android.testInstrumentationRunnerArguments.class=com.example.macrobenchmark.BaselineProfileGenerator
+
+workflows:
+  run:
+    jobs:
+      - run-test-devices
