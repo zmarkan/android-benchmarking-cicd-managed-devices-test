@@ -1,0 +1,15 @@
+version: 2.1
+
+orbs:
+  android: circleci/android@2.1.2
+
+
+jobs:
+  run-test-devices:
+    machine:
+      image: circleci/android@2.0.3
+    steps:
+      - checkout
+      - android/accept-licenses
+      - run: |
+          ./gradlew :macrobenchmark:pixel2Api31BenchmarkAndroidTest -P android.testInstrumentationRunnerArguments.class=com.example.macrobenchmark.BaselineProfileGenerator
