@@ -7,7 +7,7 @@ orbs:
 jobs:
   run-test-devices:
     machine:
-      image: circleci/android@2.0.3
+      image: android:2022.08.1
     steps:
       - checkout
       - android/accept-licenses
